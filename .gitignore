@@ -1,0 +1,17 @@
+# Local logs (dev preview server)
+*.log
+dev/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+.vs/

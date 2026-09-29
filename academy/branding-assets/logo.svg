@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="576" viewBox="0 0 1024 576">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#071827"/>
+      <stop offset="100%" stop-color="#02080d"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ee7ff"/>
+      <stop offset="45%" stop-color="#2f8bff"/>
+      <stop offset="100%" stop-color="#1a4dff"/>
+    </linearGradient>
+    <linearGradient id="boltFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eaffff"/>
+      <stop offset="55%" stop-color="#7fd8ff"/>
+      <stop offset="100%" stop-color="#2f8bff"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="576" fill="url(#bgGlow)"/>
+
+  <!-- Outer ring -->
+  <circle cx="512" cy="230" r="175" fill="none" stroke="url(#neon)" stroke-width="4" filter="url(#glow)" opacity="0.95"/>
+  <circle cx="512" cy="230" r="150" fill="none" stroke="#1a4dff" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- circuit ticks around ring -->
+  <g stroke="#5ee7ff" stroke-width="3" opacity="0.85" filter="url(#softGlow)">
+    <line x1="512" y1="45" x2="512" y2="20"/>
+    <line x1="512" y1="415" x2="512" y2="440"/>
+    <line x1="327" y1="230" x2="302" y2="230"/>
+    <line x1="697" y1="230" x2="722" y2="230"/>
+    <circle cx="512" cy="20" r="6" fill="#eaffff"/>
+    <circle cx="512" cy="440" r="6" fill="#eaffff"/>
+    <circle cx="302" cy="230" r="6" fill="#eaffff"/>
+    <circle cx="722" cy="230" r="6" fill="#eaffff"/>
+  </g>
+
+  <!-- Lightning bolt (Flash) -->
+  <g filter="url(#glow)">
+    <path d="M556 90 L462 245 L515 245 L478 372 L602 205 L545 205 Z"
+          fill="url(#boltFill)" stroke="#eaffff" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+
+  <!-- OJ monogram integrated at base of bolt -->
+  <g filter="url(#softGlow)" font-family="Arial Black, Arial, sans-serif" font-weight="900">
+    <text x="512" y="230" text-anchor="middle" font-size="46" fill="#eaffff" opacity="0.0">OJ</text>
+  </g>
+
+  <!-- small circuit nodes -->
+  <g fill="#5ee7ff" opacity="0.9">
+    <circle cx="400" cy="150" r="4"/>
+    <circle cx="630" cy="320" r="4"/>
+    <circle cx="410" cy="330" r="4"/>
+    <circle cx="615" cy="140" r="4"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" filter="url(#softGlow)">
+    <text x="512" y="480" font-size="86" font-weight="800" fill="url(#neon)" letter-spacing="4">OJ FLASH</text>
+    <text x="512" y="525" font-size="28" font-weight="600" fill="#8fd8ff" letter-spacing="4">CYBER SECURITY ACADEMY</text>
+  </g>
+</svg>

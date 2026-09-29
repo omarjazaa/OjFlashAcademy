@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#081c2e"/>
+      <stop offset="100%" stop-color="#02080d"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ee7ff"/>
+      <stop offset="45%" stop-color="#2f8bff"/>
+      <stop offset="100%" stop-color="#1a4dff"/>
+    </linearGradient>
+    <linearGradient id="boltFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eaffff"/>
+      <stop offset="55%" stop-color="#7fd8ff"/>
+      <stop offset="100%" stop-color="#2f8bff"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGlow)"/>
+
+  <circle cx="270" cy="300" r="150" fill="none" stroke="url(#neon)" stroke-width="8" filter="url(#glow)"/>
+  <circle cx="270" cy="300" r="126" fill="none" stroke="#1a4dff" stroke-width="2" opacity="0.5"/>
+  <g filter="url(#glow)">
+    <path d="M300 185 L235 305 L273 305 L243 400 L335 270 L295 270 Z"
+          fill="url(#boltFill)" stroke="#eaffff" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="470" y="290" font-size="80" font-weight="800" fill="url(#neon)" letter-spacing="3">OJ FLASH</text>
+    <text x="470" y="335" font-size="26" font-weight="600" fill="#8fd8ff" letter-spacing="3">CYBER SECURITY ACADEMY</text>
+    <text x="830" y="410" font-size="28" font-weight="700" fill="#eaffff" text-anchor="middle" letter-spacing="2" font-family="Arial, Helvetica, sans-serif">OJ Academy</text>
+  </g>
+</svg>

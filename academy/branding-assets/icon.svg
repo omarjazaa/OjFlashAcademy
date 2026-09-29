@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#071827"/>
+      <stop offset="100%" stop-color="#02080d"/>
+    </radialGradient>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5ee7ff"/>
+      <stop offset="45%" stop-color="#2f8bff"/>
+      <stop offset="100%" stop-color="#1a4dff"/>
+    </linearGradient>
+    <linearGradient id="boltFill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eaffff"/>
+      <stop offset="55%" stop-color="#7fd8ff"/>
+      <stop offset="100%" stop-color="#2f8bff"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#bgGlow)"/>
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#neon)" stroke-width="10" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="168" fill="none" stroke="#1a4dff" stroke-width="3" opacity="0.5"/>
+  <g filter="url(#glow)">
+    <path d="M291 118 L211 275 L258 275 L221 400 L336 232 L285 232 Z"
+          fill="url(#boltFill)" stroke="#eaffff" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+</svg>

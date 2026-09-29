@@ -1,0 +1,167 @@
+# OJ Academy — خارطة طريق الأمن السيبراني
+
+**OJ Academy** منصة تعليمية عربية متخصصة في الأمن السيبراني واختبار الاختراق الأخلاقي — من الأساسيات وحتى الاحتراف.
+
+> بيئة تعليمية تفاعلية لإتقان اختبار الاختراق، حماية الأنظمة، وفهم الأدوات من الصفر وحتى الاحتراف.
+
+موقع تفاعلي (React + Vite + Tailwind CSS) بواجهة عربية RTL كاملة، وجاهز للنشر على GitHub Pages تحت المسار `/academy/`.
+
+![الواجهة الرئيسية](dev/screenshots/local_verify_shot.png)
+
+## لقطات من الموقع
+
+| خارطة الطريق | حول الأكاديمية |
+|---|---|
+| ![خارطة الطريق](dev/screenshots/local_verify_roadmap.png) | ![حول الأكاديمية](dev/screenshots/local_verify_about.png) |
+
+---
+
+## نظرة عامة
+
+| العنصر | التفاصيل |
+|---|---|
+| الاسم | OJ Academy (البراند النصي في الفوتر: `OJ Flash`) |
+| اللغة | عربي بالكامل (RTL) |
+| الخطوط | Tajawal للواجهة، JetBrains Mono للمحتوى التقني |
+| الثيم | داكن بألوان نيون زرقاء |
+| الواجهة الرئيسية | تسلسل إقلاع نظام `> OJ_Flash_Academy.init()...` مع خلفية جزيئات متحركة (Canvas) |
+| الإحصائيات المعروضة | 70+ أداة تقنية · 3 مسارات تدريبية · تقييم المجتمع 4.9/5 |
+| كود الخصم | `OJFLASH` |
+| التواصل | [Telegram](https://t.me/FBI_OJ) · [LinkedIn](https://www.linkedin.com/in/al-jazaa) · [GitHub](https://github.com/omarjazaa) |
+
+---
+
+## الصفحات والمسارات
+
+الموقع تطبيق صفحة واحدة (SPA) فيه **5 أقسام رئيسية** مع صفحات فرعية:
+
+| القسم | المسار | المحتوى |
+|---|---|---|
+| الرئيسية | `/` | واجهة الدخول (Boot Sequence) + الإحصائيات + زر البدء |
+| خارطة الطريق | `/roadmap` | 3 مستويات (مبتدئ / متوسط / متقدم) مع مسارات فرعية لكل موضوع |
+| التطبيق العملي | `/practical-labs` | مختبرات وتمارين تطبيقية |
+| مكتبة الأدوات | `/tools` | فهرس أدوات مصنّف (10 تصنيفات) مع أوامر تنفيذية وروابط رسمية |
+| حول | `/about` | قصة الأكاديمية، رسالتها، وحقوق الملكية |
+
+**الصفحات الفرعية المنشورة** (كلها تفتح مباشرة بفضل إعداد الـ SPA على GitHub Pages):
+
+- **خارطة الطريق:** `programming` · `networking` · `linux` (+ `linux/courses` · `linux/websites` · `linux/what-is-linux`) · `cybersecurity-basics` · `pentest-basics` · `web-pentest` (+ `web-pentest-resources`) · `web-programming-basics` · `active-directory` · `malware-analysis`
+- **مكتبة الأدوات:** `network-pentest` · `web-pentest` · `network-analysis` · `recon` · `reverse-engineering` · `forensics` · `osint` · `wireless` · `password-attacks` · `vulnerability-scanners`
+- **صفحات مصادر:** `/resources/websites` · `/resources/youtube-channels` · `/resources/comprehensive-courses`
+
+أمثلة على الأدوات اللي بيغطيها الموقع: Nmap · Wireshark · Burp Suite · SQLMap · Metasploit · Responder · Amass · Ghidra · Autopsy · Volatility · Sherlock · Holehe · GHunt · exiftool · Hashcat · John · Hydra · Aircrack-ng · Nessus · Trivy وغيرها.
+
+---
+
+## هيكلية المستودع
+
+```
+.
+├── academy/                        ← الموقع (يُنشر على المسار /academy/)
+│   ├── index.html                  ← نقطة الدخول (مضبوطة بمسارات /academy/...)
+│   ├── assets/                     ← حزمة البناء الجاهزة (JS + CSS)
+│   ├── branding-assets/            ← ملفات الهوية المصدرية (SVG + PNG)
+│   ├── favicon.ico · apple-touch-icon.png · og-image.jpg
+│   ├── logo.jpg · logo-new.jpg     ← الشعار (نسختان متطابقتان)
+│   ├── qr-code.png · telegram-qr.png  ← كود QR (نسخ متطابقة)
+│   └── avatar_cropped.png · placeholder.svg  ← من النسخة الأصلية (غير مستخدمة بالواجهة)
+├── dev/                            ← أدوات التطوير والأرشيف (خارج محتوى الموقع)
+│   ├── rebrand_server.py           ← سيرفر معاينة محلي (منفذ 8000)
+│   ├── REBRAND-HISTORY.md          ← الأرشيف الكامل لعملية إعادة العلامة
+│   ├── screenshots/                ← لقطات الشاشة (منها ما قبل وبعد إعادة التسمية)
+│   ├── logs/                       ← سجلات محلية (مستثناة من git)
+│   └── archive/                    ← ملفات قديمة محفوظة للرجوع
+├── 404.html                        ← إعداد الـ SPA على GitHub Pages (المسارات العميقة)
+├── qr-code.png                     ← نسخة بجذر الدومين (التطبيق يطلبها من /qr-code.png)
+├── .nojekyll                       ← تعطيل معالجة Jekyll
+├── .gitignore
+└── README.md
+```
+
+---
+
+## التشغيل محلياً
+
+الموقع تطبيق SPA وأصوله تُطلب بمسارات مطلقة (`/academy/...`)، لذلك لا تفتح `academy/index.html` بالنقر المزدوج — شغّله عبر سيرفر محلي **من جذر المستودع**. المتطلب الوحيد: Python 3 (أو أي سيرفر ملفات ستاتيكي).
+
+**الطريقة الموصى بها** — سيرفر المعاينة المرفق (يدعم مسارات SPA العميقة + يمنع التخزين المؤقت بالمتصفح):
+
+```bash
+python dev/rebrand_server.py
+# ثم افتح: http://localhost:8000/academy/
+```
+
+**بديل سريع** — أي سيرفر ملفات:
+
+```bash
+python -m http.server 8080
+# ثم افتح: http://localhost:8080/academy/
+```
+
+> ملاحظة: عند الجذر `/` السيرفر المرفق يوجّه تلقائياً إلى `/academy/`.
+
+---
+
+## النشر على GitHub Pages
+
+**شرط أساسي:** الكود مبني بمسارات مطلقة تحت `/academy/` (وسوم صورة المشاركة مثبتة على `https://ojflash.github.io/academy/...`)، لذلك يجب أن يُنشر الموقع تحت هذا المسار بالضبط. الطريقة الموصى بها — مستودع الصفحات الشخصية:
+
+1. أنشئ مستودعاً عاماً باسم `ojflash.github.io` على GitHub (اسم المستودع = الدومين النهائي).
+2. المشروع مجهّز مسبقاً كمستودع git محلي (فرع `main` مع أول commit)، فيبقى عليك الربط والدفع:
+
+```bash
+git remote add origin https://github.com/ojflash/ojflash.github.io.git
+git push -u origin main
+```
+
+3. من إعدادات المستودع: **Settings → Pages → Source: Deploy from a branch → main / (root) → Save**.
+
+النتيجة:
+- الدومين: `https://ojflash.github.io/`
+- الموقع: `https://ojflash.github.io/academy/`
+
+**ملاحظات مهمة للنشر:**
+
+- `404.html` + سكربت الـ SPA داخل `academy/index.html` يطبقان نمط [spa-github-pages](https://github.com/rafgraph/spa-github-pages) حتى تفتح المسارات العميقة (مثل `/academy/roadmap/linux`) مباشرة دون صفحة 404.
+- ملف `.nojekyll` ضروري حتى لا يعالج GitHub Pages الملفات بـ Jekyll.
+- `ojflash.github.io` حالياً **placeholder** (من مرحلة إعادة العلامة) — إذا اخترت حساباً أو دوميناً نهائياً مختلفاً، بدّل الروابط المطلقة في `academy/index.html` (وسوم `og:image` و`twitter:image`) وحدّث كود الـ QR المصمم على نفس الرابط.
+- لإضافة دومين خاص لاحقاً: أضف ملف `CNAME` وحدّث الروابط المطلقة المذكورة أعلاه.
+
+---
+
+## الهوية البصرية
+
+| الملف | الاستخدام |
+|---|---|
+| `academy/branding-assets/logo.svg` · `logo.png` | الشعار الكامل (SVG مصدري قابل للتعديل) |
+| `academy/branding-assets/icon.svg` · `icon-512.png` | الأيقونة المربعة |
+| `academy/branding-assets/og-image.svg` · `og-image.png` | مصدر صورة المشاركة |
+| `academy/favicon.ico` | أيقونة المتصفح |
+| `academy/apple-touch-icon.png` | أيقونة أجهزة Apple |
+| `academy/og-image.jpg` | صورة المشاركة النهائية (Open Graph / Twitter) |
+
+لوحة الألوان: أساسي `hsl(205 100% 55%)` (أزرق سماوي) · ثانوي `hsl(228 70% 58%)` (نيلي) · نيون أزرق `hsl(195 100% 50%)`.
+
+---
+
+## ملاحظات تقنية
+
+- **البناء:** React + Vite — حزمة الإنتاج كاملة بملفين فقط داخل `academy/assets/`: `index-BlADLk9O.js` و `index-BhPYGXCl.css`.
+- **صورة الـ QR داخل التطبيق** تُطلب من مسار مطلق على جذر الدومين: `/qr-code.png` — لذلك توجد نسخة منها في جذر المستودع. للعلم يوجد ثلاث نسخ متطابقة المحتوى: `qr-code.png` (جذر المستودع) · `academy/qr-code.png` · `academy/telegram-qr.png`.
+- **الشعار:** `logo.jpg` و `logo-new.jpg` متطابقان تماماً (نفس البصمة) — متروكان كما وصلا من النسخة الأصلية.
+- **صورة المشاركة (OG):** مضبوطة على `https://ojflash.github.io/academy/og-image.jpg` داخل وسوم og/twitter في `academy/index.html`.
+- **Cloudflare Web Analytics** مضمّنة في `academy/index.html`.
+- **إمكانية الوصول:** حزمة الأنماط تدعم `prefers-reduced-motion` (تقليل الحركة).
+- **حقوق الملكية:** صفحة "حول" تعرض: "جميع الحقوق والملكيات محفوظة لأصحابها الأصليين".
+
+---
+
+## سجل إعادة العلامة (Rebrand History)
+
+هذه النسخة هي ناتج البناء النهائي بعد إعادة تسمية كاملة للموقع. الوثيقة التفصيلية لكل التعديلات — الأسماء، الألوان، الروابط، الشعارات، مع برومبتات جاهزة لتطبيق نفس التعديلات على الكود المصدري — محفوظة **كما هي دون أي تعديل** في:
+
+📄 [`dev/REBRAND-HISTORY.md`](dev/REBRAND-HISTORY.md)
+
+كما يوجد في `dev/archive/` أرشيف كامل لما قبل إعادة الهيكلة (نسخة الدخول المحلية القديمة + بقايا قالب المشروع الأصلي).
+
+
