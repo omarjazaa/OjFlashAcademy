@@ -4,7 +4,7 @@
 
 > بيئة تعليمية تفاعلية لإتقان اختبار الاختراق، حماية الأنظمة، وفهم الأدوات من الصفر وحتى الاحتراف.
 
-موقع تفاعلي (React + Vite + Tailwind CSS) بواجهة عربية RTL كاملة، وجاهز للنشر على GitHub Pages تحت المسار `/academy/`.
+موقع تفاعلي (React + Vite + Tailwind CSS) بواجهة عربية RTL كاملة، منشور على GitHub Pages من مستودع [OjFlashAcademy](https://github.com/omarjazaa/OjFlashAcademy) على الرابط: **[omarjazaa.github.io/OjFlashAcademy](https://omarjazaa.github.io/OjFlashAcademy/)**
 
 ![الواجهة الرئيسية](dev/screenshots/local_verify_shot.png)
 
@@ -57,22 +57,20 @@
 
 ```
 .
-├── academy/                        ← الموقع (يُنشر على المسار /academy/)
-│   ├── index.html                  ← نقطة الدخول (مضبوطة بمسارات /academy/...)
-│   ├── assets/                     ← حزمة البناء الجاهزة (JS + CSS)
-│   ├── branding-assets/            ← ملفات الهوية المصدرية (SVG + PNG)
-│   ├── favicon.ico · apple-touch-icon.png · og-image.jpg
-│   ├── logo.jpg · logo-new.jpg     ← الشعار (نسختان متطابقتان)
-│   ├── qr-code.png · telegram-qr.png  ← كود QR (نسخ متطابقة)
-│   └── avatar_cropped.png · placeholder.svg  ← من النسخة الأصلية (غير مستخدمة بالواجهة)
+├── index.html                      ← نقطة الدخول (مضبوطة بمسارات /OjFlashAcademy/...)
+├── assets/                         ← حزمة البناء الجاهزة (JS + CSS)
+├── branding-assets/                ← ملفات الهوية المصدرية (SVG + PNG)
+├── favicon.ico · apple-touch-icon.png · og-image.jpg
+├── logo.jpg · logo-new.jpg         ← الشعار (نسختان متطابقتان)
+├── qr-code.png · telegram-qr.png   ← كود QR (نسخ متطابقة)
+├── avatar_cropped.png · placeholder.svg  ← من النسخة الأصلية (غير مستخدمة بالواجهة)
 ├── dev/                            ← أدوات التطوير والأرشيف (خارج محتوى الموقع)
-│   ├── rebrand_server.py           ← سيرفر معاينة محلي (منفذ 8000)
+│   ├── rebrand_server.py           ← سيرفر معاينة محلي (منفذ 8000، يحاكي مسار /OjFlashAcademy/)
 │   ├── REBRAND-HISTORY.md          ← الأرشيف الكامل لعملية إعادة العلامة
 │   ├── screenshots/                ← لقطات الشاشة (منها ما قبل وبعد إعادة التسمية)
 │   ├── logs/                       ← سجلات محلية (مستثناة من git)
 │   └── archive/                    ← ملفات قديمة محفوظة للرجوع
-├── 404.html                        ← إعداد الـ SPA على GitHub Pages (المسارات العميقة)
-├── qr-code.png                     ← نسخة بجذر الدومين (التطبيق يطلبها من /qr-code.png)
+├── 404.html                        ← إعداد الـ SPA على GitHub Pages (تحويل المسارات العميقة)
 ├── .nojekyll                       ← تعطيل معالجة Jekyll
 ├── .gitignore
 └── README.md
@@ -82,49 +80,40 @@
 
 ## التشغيل محلياً
 
-الموقع تطبيق SPA وأصوله تُطلب بمسارات مطلقة (`/academy/...`)، لذلك لا تفتح `academy/index.html` بالنقر المزدوج — شغّله عبر سيرفر محلي **من جذر المستودع**. المتطلب الوحيد: Python 3 (أو أي سيرفر ملفات ستاتيكي).
-
-**الطريقة الموصى بها** — سيرفر المعاينة المرفق (يدعم مسارات SPA العميقة + يمنع التخزين المؤقت بالمتصفح):
+الموقع تطبيق SPA وأصوله تُطلب بمسارات مطلقة (`/OjFlashAcademy/...`)، لذلك لا تفتح `index.html` بالنقر المزدوج — شغّله عبر سيرفر المعاينة المرفق **من جذر المستودع** (المتطلب الوحيد: Python 3). السيرفر يعيد إنتاج مسار النشر الحقيقي محلياً:
 
 ```bash
 python dev/rebrand_server.py
-# ثم افتح: http://localhost:8000/academy/
+# ثم افتح: http://localhost:8000/OjFlashAcademy/
 ```
 
-**بديل سريع** — أي سيرفر ملفات:
-
-```bash
-python -m http.server 8080
-# ثم افتح: http://localhost:8080/academy/
-```
-
-> ملاحظة: عند الجذر `/` السيرفر المرفق يوجّه تلقائياً إلى `/academy/`.
+> ملاحظات: زيارة الجذر `/` توجّه تلقائياً إلى `/OjFlashAcademy/`، والسيرفر يدعم المسارات العميقة (مثل `/OjFlashAcademy/roadmap/linux`) ويمنع تخزين المتصفح المؤقت أثناء التطوير.
 
 ---
 
 ## النشر على GitHub Pages
 
-**شرط أساسي:** الكود مبني بمسارات مطلقة تحت `/academy/` (وسوم صورة المشاركة مثبتة على `https://ojflash.github.io/academy/...`)، لذلك يجب أن يُنشر الموقع تحت هذا المسار بالضبط. الطريقة الموصى بها — مستودع الصفحات الشخصية:
+الموقع منشور من مستودع [`omarjazaa/OjFlashAcademy`](https://github.com/omarjazaa/OjFlashAcademy) على الرابط:
 
-1. أنشئ مستودعاً عاماً باسم `ojflash.github.io` على GitHub (اسم المستودع = الدومين النهائي).
-2. المشروع مجهّز مسبقاً كمستودع git محلي (فرع `main` مع أول commit)، فيبقى عليك الربط والدفع:
+**https://omarjazaa.github.io/OjFlashAcademy/**
+
+**خطوات النشر (مرة واحدة):**
+
+1. ارفع الفرع `main` إلى المستودع (المشروع مجهّز محلياً كمستودع git مع أول commit):
 
 ```bash
-git remote add origin https://github.com/ojflash/ojflash.github.io.git
+git remote add origin https://github.com/omarjazaa/OjFlashAcademy.git
 git push -u origin main
 ```
 
-3. من إعدادات المستودع: **Settings → Pages → Source: Deploy from a branch → main / (root) → Save**.
-
-النتيجة:
-- الدومين: `https://ojflash.github.io/`
-- الموقع: `https://ojflash.github.io/academy/`
+2. من إعدادات المستودع: **Settings → Pages → Source: Deploy from a branch → Branch: `main` + folder `/ (root)` → Save**.
 
 **ملاحظات مهمة للنشر:**
 
-- `404.html` + سكربت الـ SPA داخل `academy/index.html` يطبقان نمط [spa-github-pages](https://github.com/rafgraph/spa-github-pages) حتى تفتح المسارات العميقة (مثل `/academy/roadmap/linux`) مباشرة دون صفحة 404.
+- المسارات داخل الموقع مضبوطة على اسم المستودع `/OjFlashAcademy/` (استدعاءات الملفات + صورة الـ QR + وسوم `og:image` و`twitter:image`). **إذا غيّرت اسم المستودع لاحقاً** بدّل هذه المواضع نفسها: مراجع الملفات في `index.html`، رابطا الميتا، وسطر واحد داخل `assets/index-BlADLk9O.js`.
+- `404.html` + سكربت الـ SPA داخل `index.html` يطبقان نمط [spa-github-pages](https://github.com/rafgraph/spa-github-pages) حتى تفتح المسارات العميقة (مثل `/OjFlashAcademy/roadmap/linux`) مباشرة دون صفحة 404.
 - ملف `.nojekyll` ضروري حتى لا يعالج GitHub Pages الملفات بـ Jekyll.
-- `ojflash.github.io` حالياً **placeholder** (من مرحلة إعادة العلامة) — إذا اخترت حساباً أو دوميناً نهائياً مختلفاً، بدّل الروابط المطلقة في `academy/index.html` (وسوم `og:image` و`twitter:image`) وحدّث كود الـ QR المصمم على نفس الرابط.
+- كود الـ QR المصمم داخل `qr-code.png` يشاور على رابط placeholder قديم — يُفضَّل إعادة توليده بالرابط النهائي عند الرغبة.
 - لإضافة دومين خاص لاحقاً: أضف ملف `CNAME` وحدّث الروابط المطلقة المذكورة أعلاه.
 
 ---
@@ -146,10 +135,10 @@ git push -u origin main
 
 ## ملاحظات تقنية
 
-- **البناء:** React + Vite — حزمة الإنتاج كاملة بملفين فقط داخل `academy/assets/`: `index-BlADLk9O.js` و `index-BhPYGXCl.css`.
-- **صورة الـ QR داخل التطبيق** تُطلب من مسار مطلق على جذر الدومين: `/qr-code.png` — لذلك توجد نسخة منها في جذر المستودع. للعلم يوجد ثلاث نسخ متطابقة المحتوى: `qr-code.png` (جذر المستودع) · `academy/qr-code.png` · `academy/telegram-qr.png`.
+- **البناء:** React + Vite — حزمة الإنتاج كاملة بملفين فقط داخل `assets/`: `index-BlADLk9O.js` و `index-BhPYGXCl.css`.
+- **صورة الـ QR داخل التطبيق** تُطلب بمسار مطلق `/OjFlashAcademy/qr-code.png` — والملف موجود بجذر المستودع. (توجد نسخة مطابقة باسم `telegram-qr.png`، وأخرى مؤرشفة في `dev/archive/`.)
 - **الشعار:** `logo.jpg` و `logo-new.jpg` متطابقان تماماً (نفس البصمة) — متروكان كما وصلا من النسخة الأصلية.
-- **صورة المشاركة (OG):** مضبوطة على `https://ojflash.github.io/academy/og-image.jpg` داخل وسوم og/twitter في `academy/index.html`.
+- **صورة المشاركة (OG):** مضبوطة على `https://omarjazaa.github.io/OjFlashAcademy/og-image.jpg` داخل وسوم og/twitter في `index.html`.
 - **Cloudflare Web Analytics** مضمّنة في `academy/index.html`.
 - **إمكانية الوصول:** حزمة الأنماط تدعم `prefers-reduced-motion` (تقليل الحركة).
 - **حقوق الملكية:** صفحة "حول" تعرض: "جميع الحقوق والملكيات محفوظة لأصحابها الأصليين".

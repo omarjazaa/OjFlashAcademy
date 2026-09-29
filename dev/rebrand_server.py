@@ -3,7 +3,9 @@ import socketserver
 import os
 
 PORT = 8000
-# Serve the repository root (contains the academy/ site folder + root-level qr-code.png)
+# Serve the repository root; the site is published at the /OjFlashAcademy/ path
+# (GitHub project pages: https://omarjazaa.github.io/OjFlashAcademy/)
+SITE_PREFIX = "/OjFlashAcademy"
 DIRECTORY = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -18,23 +20,25 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_GET(self):
-        if self.path == "/" or self.path == "":
+        if self.path in ("", "/", "/academy", "/academy/"):
             self.send_response(302)
-            self.send_header("Location", "/academy/")
+            self.send_header("Location", SITE_PREFIX + "/")
             self.end_headers()
             return
         
         clean_path = self.path.split("?")[0].split("#")[0]
         fs_path = os.path.join(DIRECTORY, clean_path.lstrip("/"))
         
-        if clean_path.startswith("/academy"):
-            if not os.path.exists(fs_path):
-                self.path = "/academy/index.html"
-            elif os.path.isdir(fs_path) and not os.path.exists(os.path.join(fs_path, "index.html")):
-                self.path = "/academy/index.html"
+        if clean_path.startswith(SITE_PREFIX):
+            rel = clean_path[len(SITE_PREFIX):] or "/"
+            fs_path = os.path.join(DIRECTORY, rel.lstrip("/"))
+            if not os.path.exists(fs_path) or (os.path.isdir(fs_path) and not os.path.exists(os.path.join(fs_path, "index.html"))):
+                self.path = "/index.html"
+            else:
+                self.path = rel
                 
         return super().do_GET()
 
 with http.server.ThreadingHTTPServer(("", PORT), Handler) as httpd:
-    print(f"Serving at http://localhost:{PORT}")
+    print(f"Serving at http://localhost:{PORT}{SITE_PREFIX}/")
     httpd.serve_forever()
