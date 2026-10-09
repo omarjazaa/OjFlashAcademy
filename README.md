@@ -61,9 +61,8 @@
 ├── assets/                         ← حزمة البناء الجاهزة (JS + CSS)
 ├── branding-assets/                ← ملفات الهوية المصدرية (SVG + PNG)
 ├── favicon.ico · apple-touch-icon.png · og-image.jpg
-├── logo.jpg · logo-new.jpg         ← الشعار (نسختان متطابقتان)
-├── qr-code.png · telegram-qr.png   ← كود QR (نسخ متطابقة)
-├── avatar_cropped.png · placeholder.svg  ← من النسخة الأصلية (غير مستخدمة بالواجهة)
+├── logo.jpg                        ← الشعار المعتمد (نسخة وحيدة)
+├── qr-code.png                     ← كود QR المعتمد (المستخدم بالواجهة)
 ├── dev/                            ← أدوات التطوير والأرشيف (خارج محتوى الموقع)
 │   ├── rebrand_server.py           ← سيرفر معاينة محلي (منفذ 8000، يحاكي مسار /OjFlashAcademy/)
 │   ├── REBRAND-HISTORY.md          ← الأرشيف الكامل لعملية إعادة العلامة
@@ -136,8 +135,8 @@ git push -u origin main
 ## ملاحظات تقنية
 
 - **البناء:** React + Vite — حزمة الإنتاج كاملة بملفين فقط داخل `assets/`: `index-BlADLk9O.js` و `index-BhPYGXCl.css`.
-- **صورة الـ QR داخل التطبيق** تُطلب بمسار مطلق `/OjFlashAcademy/qr-code.png` — والملف موجود بجذر المستودع. (توجد نسخة مطابقة باسم `telegram-qr.png`، وأخرى مؤرشفة في `dev/archive/`.)
-- **الشعار:** `logo.jpg` و `logo-new.jpg` متطابقان تماماً (نفس البصمة) — متروكان كما وصلا من النسخة الأصلية.
+- **صورة الـ QR داخل التطبيق** تُطلب بمسار مطلق `/OjFlashAcademy/qr-code.png` — والملف موجود بجذر المستودع كنسخة وحيدة معتمدة (تم حذف النسخ المكررة).
+- **الشعار:** `logo.jpg` نسخة وحيدة معتمدة (تم حذف النسخة المكررة `logo-new.jpg`).
 - **صورة المشاركة (OG):** مضبوطة على `https://omarjazaa.github.io/OjFlashAcademy/og-image.jpg` داخل وسوم og/twitter في `index.html`.
 - **Cloudflare Web Analytics** مضمّنة في `academy/index.html`.
 - **إمكانية الوصول:** حزمة الأنماط تدعم `prefers-reduced-motion` (تقليل الحركة).
