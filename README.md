@@ -33,7 +33,7 @@
 
 ## الصفحات والمسارات
 
-الموقع تطبيق صفحة واحدة (SPA) فيه **5 أقسام رئيسية** مع صفحات فرعية:
+الموقع تطبيق صفحة واحدة (SPA) فيه **8 أقسام رئيسية** مع صفحات فرعية:
 
 | القسم | المسار | المحتوى |
 |---|---|---|
@@ -41,12 +41,18 @@
 | خارطة الطريق | `/roadmap` | 3 مستويات (مبتدئ / متوسط / متقدم) مع مسارات فرعية لكل موضوع |
 | التطبيق العملي | `/practical-labs` | مختبرات وتمارين تطبيقية |
 | مكتبة الأدوات | `/tools` | فهرس أدوات مصنّف (10 تصنيفات) مع أوامر تنفيذية وروابط رسمية |
+| الكتب | `/books` | مكتبة كتب تخصصية مصنفة (OSINT، Cybersecurity، Pentester، Linux) |
+| الشهادات | `/certifications` | دليل الشهادات المعتمدة عالمياً (Security+، CEH، eJPT، OSCP) |
+| أقسام أخرى | `/other` | استكشاف الويب المظلم (Dark Web) والويب العميق (Deep Web) |
 | حول | `/about` | قصة الأكاديمية، رسالتها، وحقوق الملكية |
 
 **الصفحات الفرعية المنشورة** (كلها تفتح مباشرة بفضل إعداد الـ SPA على GitHub Pages):
 
 - **خارطة الطريق:** `programming` · `networking` · `linux` (+ `linux/courses` · `linux/websites` · `linux/what-is-linux`) · `cybersecurity-basics` · `pentest-basics` · `web-pentest` (+ `web-pentest-resources`) · `web-programming-basics` · `active-directory` · `malware-analysis`
 - **مكتبة الأدوات:** `network-pentest` · `web-pentest` · `network-analysis` · `recon` · `reverse-engineering` · `forensics` · `osint` · `wireless` · `password-attacks` · `vulnerability-scanners`
+- **مكتبة الكتب:** `/books/osint` · `/books/cybersecurity` · `/books/pentester` · `/books/linux`
+- **دليل الشهادات:** `/certifications/security-plus` · `/certifications/ceh` · `/certifications/ejpt` · `/certifications/oscp`
+- **مواضيع متقدمة:** `/other/dark-web` · `/other/deep-web`
 - **صفحات مصادر:** `/resources/websites` · `/resources/youtube-channels` · `/resources/comprehensive-courses`
 
 أمثلة على الأدوات اللي بيغطيها الموقع: Nmap · Wireshark · Burp Suite · SQLMap · Metasploit · Responder · Amass · Ghidra · Autopsy · Volatility · Sherlock · Holehe · GHunt · exiftool · Hashcat · John · Hydra · Aircrack-ng · Nessus · Trivy وغيرها.
